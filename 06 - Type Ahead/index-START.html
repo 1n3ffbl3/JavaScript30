@@ -23,6 +23,17 @@ fetch(endpoint)
 .then(blob => blob.json()) // that will return another promise 
 .then(data => cities.push(...data)); // expanding citites, which is an empty array, with data by using push()method and spread syntax
 
+
+function findMatches(wordToMatch, cities){
+  
+  return cities.filter(place => {
+    const regex = new RegExp(wordToMatch, 'gi'); // g -> means global, which is going to look through entire string and  i -> means insensitive which want to say that it's going to match lower cases or upper cases
+    return place.city.match(regex) || place.state.match(regex)
+
+
+  });
+}
+
 </script>
   </body>
 </html>
