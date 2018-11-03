@@ -16,7 +16,22 @@
   ctx.strokeStyle = '#BADASS';
   ctx.lineJoin = 'round';
   ctx.lineCap = 'round';
-  
+
+  let isDrawing = false; // a flag which a the beginning is false but after cliking 'mousedown' will change to true
+  let lastX = 0;
+  let lastY = 0; 
+
+  function draw(e){ // that function will be called whenever someone move his mouse on top of the canvas
+    if(!isDrawing) return // it stops the function from running when they are not moused down
+
+  }
+
+  canvas.addEventListener('mousemove', draw);
+  canvas.addEventListener('mousedown', () => isDrawing = true);
+  canvas.addEventListener('mouseup', () => isDrawing = false);
+  canvas.addEventListener('mouseout', () => isDrawing = false);
+
+
 </script>
 
 <style>
