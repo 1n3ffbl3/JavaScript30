@@ -62,9 +62,17 @@
     })
 
     // Counting
-    console.count('Steve') // it will count how ever many times you use a specific word or object or number etc. 
+    console.count('Steve'); // it will count how ever many times you use a specific word or object or number etc. 
 
     // Timing
+    console.time('fetching data');
+    fetch('https://api.github.com/users/wesbos')
+        .then(data => data.json())
+        .then(data => {
+          console.timeEnd('fetching data'); //you have to use the same string as the one that you start with
+          console.log(data);
+        });
+
 
   </script>
 </body>
