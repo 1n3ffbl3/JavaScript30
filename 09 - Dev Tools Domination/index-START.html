@@ -48,10 +48,18 @@
 
     // Viewing DOM Elements
     const p = document.querySelector('p');
-    console.log(p);
-    console.dir(p);
+    console.log(p); // it's going to show you the actual element itself
+    console.dir(p); // that's going to give you a drop down
 
     // Grouping together
+    dogs.forEach( dog => {
+      // console.group(`${dog.name}`); this or:
+      console.groupCollapsed(`${dog.name}`);
+      console.log(`This is ${dog.name}`);
+      console.log(`${dog.name} is ${dog.age} years old`);
+      console.log(`${dog.name} is ${dog.age *7} dog years old`);
+      console.groupEnd(`${dog.name}`);
+    })
 
     // counting
 
