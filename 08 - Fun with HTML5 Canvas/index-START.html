@@ -23,7 +23,9 @@
 
   function draw(e){ // that function will be called whenever someone move his mouse on top of the canvas
     if(!isDrawing) return // it stops the function from running when they are not moused down
-
+    ctx.beginPath();
+    ctx.moveTo(lastX, lastY);
+    ctx.lineTo(e.offsetX, e.offsetY) // those values are coming from the actual event that happen here
   }
 
   canvas.addEventListener('mousemove', draw);
