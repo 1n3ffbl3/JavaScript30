@@ -64,6 +64,24 @@
     // Find the comment with this ID
     // delete the comment with the ID of 823423
 
+    const index = comments.findIndex (comment => comment.id === 823423 );
+
+    console.log('index: ', index)
+
+    //First way to delete comment
+
+    // comments.splice(index, 1);
+
+    // Second way to delete comment (realy popular in REDUX world!)
+    // which will built a new array of the comments. It's important to use
+    // a spread syntax to spread items into newComments
+    
+    const newComments = [
+      ...comments.slice(0, index),
+      ...comments.slice(index + 1)
+    ];
+    console.table(newComments);
+
   </script>
 </body>
 </html>
