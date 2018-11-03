@@ -41,7 +41,7 @@
 
 
     // Testing
-    console.assert(1 === 2, 'That is wrong!');
+    console.assert(1 === 2, 'That is wrong!'); // only in development environment
 
     // Clearing
     console.clear();
@@ -54,16 +54,17 @@
     // Grouping together
     dogs.forEach( dog => {
       // console.group(`${dog.name}`); this or:
-      console.groupCollapsed(`${dog.name}`);
+      console.groupCollapsed(`${dog.name}`); // they will be by default collapsed
       console.log(`This is ${dog.name}`);
       console.log(`${dog.name} is ${dog.age} years old`);
       console.log(`${dog.name} is ${dog.age *7} dog years old`);
       console.groupEnd(`${dog.name}`);
     })
 
-    // counting
+    // Counting
+    console.count('Steve') // it will count how ever many times you use a specific word or object or number etc. 
 
-    // timing
+    // Timing
 
   </script>
 </body>
