@@ -8,6 +8,8 @@
 <canvas id="draw" width="800" height="800"></canvas>
 <script>
 
+  // mother effing hsl !! 
+
   const canvas = document.querySelector('#draw');
   const ctx = canvas.getContext('2d'); // '2d' is a context of a paint although '3d' is a context of videogames
   canvas.width = window.innerWidth; //exact width of the window
@@ -21,17 +23,19 @@
   let isDrawing = false; // a flag which a the beginning is false but after cliking 'mousedown' will change to true
   let lastX = 0;
   let lastY = 0; 
+  let hue = 0;
 
   function draw(e){ // that function will be called whenever someone move his mouse on top of the canvas
     if(!isDrawing) return // it stops the function from running when they are not moused down
     // start from
+    ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
     ctx.beginPath();
     // go to
     ctx.moveTo(lastX, lastY);
     ctx.lineTo(e.offsetX, e.offsetY); // those values are coming from the actual event that happen here
     ctx.stroke();
     [lastX, lastY] = [e.offsetX, e.offsetY]; // destructuring in an array
-  
+    hue ++;
   }
   canvas.addEventListener('mousedown', (e) => {
     isDrawing = true;
