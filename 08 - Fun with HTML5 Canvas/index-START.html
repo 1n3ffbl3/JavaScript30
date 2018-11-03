@@ -19,7 +19,7 @@
   ctx.lineJoin = 'round';
   ctx.lineCap = 'round';
   ctx.lineWidth = 100;
-  
+  ctx.globalCompositionOperation = 'multiply' // playing with different blend modes; check out CanvasRenderingContext2D.globalCompositeOperation in google! 
 
   let isDrawing = false; // a flag which a the beginning is false but after cliking 'mousedown' will change to true
   let lastX = 0;
