@@ -39,12 +39,12 @@
     
     // Array.prototype.every() // is everyone 19 or older?
 
-    const atLeastnineteen = people.every(person => {
+    const atLeastNineteen = people.every(person => {
       const currentYear = (new Date()).getFullYear();
       return currentYear - person >= 19
     })
 
-    console.table(atLeastnineteen);
+    console.table(atLeastNineteen);
 
     // Array.prototype.find()
     // Find is like filter, but instead returns just the one you are looking for
