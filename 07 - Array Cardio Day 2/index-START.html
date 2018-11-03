@@ -27,13 +27,24 @@
     // Some and Every Checks
     // Array.prototype.some() // is at least one person 19 or older?
 
+    // One line solution : 
+    // const adult = people.some(person=> ((new Date()).getFullYear()) - person.year >= 19);
+
     const adult = people.some(person=> {
       const currentYear = (new Date()).getFullYear();
       return currentYear - person.year >= 19
     });
 
     console.log({adult}); // thanks to curly brackets the variable name will show up in console
+    
     // Array.prototype.every() // is everyone 19 or older?
+
+    const atLeastnineteen = people.every(person => {
+      const currentYear = (new Date()).getFullYear();
+      return currentYear - person >= 19
+    })
+
+    console.table(atLeastnineteen);
 
     // Array.prototype.find()
     // Find is like filter, but instead returns just the one you are looking for
